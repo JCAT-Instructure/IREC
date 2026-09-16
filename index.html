@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IREC Workforce & Accreditation Modernization Strategy</title>
-  <!-- Tailwind CSS CDN -->
+  <title>IREC Modernization Strategy | Green Workforce Connect & Canvas Integration</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     tailwind.config = {
@@ -33,279 +31,375 @@
     .chart-container {
       position: relative;
       width: 100%;
-      max-width: 650px;
+      max-width: 600px;
       margin-left: auto;
       margin-right: auto;
-      height: 320px;
-      max-height: 400px;
+      height: 300px;
+      max-height: 380px;
     }
     @media (min-width: 768px) {
       .chart-container {
-        height: 380px;
+        height: 340px;
       }
-    }
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: #0F172A;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #334155;
-      border-radius: 3px;
     }
   </style>
 </head>
-<!-- COLOR PALETTE: Vibrant Cyan & Deep Indigo (Primary: #0EA5E9, Secondary: #6366F1, Dark: #0F172A, Accent: #10B981, Warning/Highlight: #F59E0B, Neutral BG: #F8FAFC) -->
-<!-- CONFIRMATION: Neither SVG nor Mermaid JS were used in any part of this output. Visualizations rely strictly on HTML5 Canvas via Chart.js and structured Tailwind CSS components. -->
-<!-- NARRATIVE PLAN: Structure begins with Executive Highlights and KPIs, moves into diagnostic operational cycle comparisons, examines LMS model financial & capacity mechanics with interactive simulations, compares functional capabilities, and closes with a phased deployment roadmap. -->
-<!-- VISUALIZATION CHOICES & JUSTIFICATIONS:
-1. Metric KPI Cards: Goal - Inform -> Show big numbers and cycle time improvements.
-2. Cycle Time Bottleneck Bar Chart: Goal - Compare -> Chart.js horizontal bar chart comparing legacy vs modern process durations.
-3. Capacity & Value Comparison Bar Chart: Goal - Compare -> Chart.js grouped bar chart comparing session capacity and Year 1 cost.
-4. Capability Alignment Radar Chart: Goal - Relationships/Compare -> Chart.js radar chart comparing functional capabilities across 5 strategic dimensions.
-5. Interactive Cost & Capacity Calculator: Goal - Organize/Simulate -> Custom JS interactive slider calculator demonstrating MAU vs Enrollment financial impact based on user inputs.
-6. Process Flow Diagram: Goal - Process/Organize -> Structured HTML/CSS cards with Tailwind flexbox layout and Unicode arrows (No SVG/Mermaid).
--->
 <body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-white">
 
-  <!-- Sticky Top Navigation -->
-  <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+  <nav class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center space-x-3">
           <span class="text-2xl">⚡</span>
-          <span class="font-bold text-lg tracking-tight text-white">IREC <span class="text-sky-400">Modernization</span></span>
+          <span class="font-bold text-lg text-white">IREC <span class="text-sky-400">Modernization Strategy</span></span>
         </div>
         <div class="hidden md:flex space-x-6 text-sm font-medium">
           <a href="#overview" class="text-slate-300 hover:text-sky-400 transition-colors">Overview</a>
-          <a href="#diagnostic" class="text-slate-300 hover:text-sky-400 transition-colors">Diagnostic</a>
-          <a href="#models" class="text-slate-300 hover:text-sky-400 transition-colors">LMS Models</a>
-          <a href="#calculator" class="text-slate-300 hover:text-sky-400 transition-colors">Interactive Simulator</a>
-          <a href="#roadmap" class="text-slate-300 hover:text-sky-400 transition-colors">Roadmap</a>
+          <a href="#lms" class="text-slate-300 hover:text-sky-400 transition-colors">1. LMS & Functionality</a>
+          <a href="#accreditation" class="text-slate-300 hover:text-sky-400 transition-colors">2. Credentialing</a>
+          <a href="#roadmap" class="text-slate-300 hover:text-sky-400 transition-colors">3. Roadmap</a>
         </div>
         <div>
-          <a href="#calculator" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm transition-colors shadow-lg shadow-sky-500/20">
-            Compare Pricing
+          <a href="#simulator" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
+            Cost Simulator
           </a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero & Executive Overview -->
-  <section id="overview" class="py-12 md:py-16 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800/80">
+  <section id="overview" class="py-12 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800/80 border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="inline-block px-3 py-1 bg-sky-500/10 text-sky-400 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 border border-sky-500/20">
-          Strategic Partnership Architecture
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="inline-block px-3 py-1 bg-sky-500/10 text-sky-400 rounded-full text-xs font-semibold tracking-wider uppercase mb-3 border border-sky-500/20">
+          Executive Roadmap & Strategic Analysis
         </span>
         <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
-          Modernizing IREC's Clean Energy Workforce Ecosystem
+          Modernizing IREC’s Learning & Credentialing Infrastructure
         </h1>
         <p class="text-slate-300 text-base md:text-lg leading-relaxed">
-          Transitioning the Interstate Renewable Energy Council from fragmented legacy tools to an API-driven Instructure Canvas architecture. Optimize grant capacity, automate ANSI accreditations, and deliver verifiable digital credentials.
+          Transitioning from Cadmium Elevate, Salesforce, and manual Word forms to an integrated Canvas Career LMS and Parchment Digital Credentials ecosystem linked to Green Workforce Connect.
         </p>
       </div>
 
-      <!-- KPI Summary Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- KPI 1 -->
-        <div class="bg-slate-800/90 border border-slate-700/60 rounded-xl p-6 shadow-xl relative overflow-hidden group hover:border-sky-500/50 transition-all">
-          <div class="absolute top-0 right-0 w-24 h-24 bg-sky-500/10 rounded-full blur-xl group-hover:bg-sky-500/20 transition-all"></div>
-          <div class="text-3xl mb-2">⏱️</div>
-          <div class="text-3xl font-black text-white tracking-tight mb-1">
-            7 Mo <span class="text-xs font-normal text-rose-400">➜</span> <span class="text-emerald-400">&lt;30 Days</span>
-          </div>
-          <div class="text-xs uppercase font-bold text-slate-400 tracking-wider">Accreditation Cycle</div>
-          <p class="text-xs text-slate-400 mt-2">Dramatically accelerates candidate desk assessments and review approvals.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-5 shadow-lg">
+          <div class="text-2xl mb-1">📜</div>
+          <div class="text-2xl font-black text-white mb-1">2 ANSI <span class="text-xs font-normal text-emerald-400">Standards</span></div>
+          <div class="text-xs uppercase font-bold text-slate-400">Core Accreditation</div>
+          <p class="text-[11px] text-slate-400 mt-1">Standard 01023 (Training Providers) and Standard 01024 (Instructors).</p>
         </div>
 
-        <!-- KPI 2 -->
-        <div class="bg-slate-800/90 border border-slate-700/60 rounded-xl p-6 shadow-xl relative overflow-hidden group hover:border-indigo-500/50 transition-all">
-          <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-500/10 rounded-full blur-xl group-hover:bg-indigo-500/20 transition-all"></div>
-          <div class="text-3xl mb-2">📂</div>
-          <div class="text-3xl font-black text-white tracking-tight mb-1">
-            10,000 <span class="text-emerald-400 font-medium text-sm">$0 Storage</span>
-          </div>
-          <div class="text-xs uppercase font-bold text-slate-400 tracking-wider">Historical Contacts</div>
-          <p class="text-xs text-slate-400 mt-2">Dormant user records are stored free of charge under the Canvas MAU licensing model.</p>
+        <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-5 shadow-lg">
+          <div class="text-2xl mb-1">🚀</div>
+          <div class="text-2xl font-black text-sky-400 mb-1">&gt;200 <span class="text-xs font-normal text-slate-300">Enrollees/Wk</span></div>
+          <div class="text-xs uppercase font-bold text-slate-400">Apprenticeships Launch</div>
+          <p class="text-[11px] text-slate-400 mt-1">17-lesson flagship course rapidly scaling green career pathways.</p>
         </div>
 
-        <!-- KPI 3 -->
-        <div class="bg-slate-800/90 border border-slate-700/60 rounded-xl p-6 shadow-xl relative overflow-hidden group hover:border-emerald-500/50 transition-all">
-          <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all"></div>
-          <div class="text-3xl mb-2">🚀</div>
-          <div class="text-3xl font-black text-white tracking-tight mb-1">
-            12,000 <span class="text-xs text-slate-400 font-normal">vs 1,000</span>
-          </div>
-          <div class="text-xs uppercase font-bold text-slate-400 tracking-wider">Annual User Capacity</div>
-          <div class="text-xs text-slate-400 mt-2">1,000 MAUs provides up to 12k active sessions vs 1k strict enrollment caps.</div>
+        <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-5 shadow-lg">
+          <div class="text-2xl mb-1">⏱️</div>
+          <div class="text-2xl font-black text-white mb-1">7 Months <span class="text-xs text-rose-400">➜</span> <span class="text-emerald-400">&lt;24 Days</span></div>
+          <div class="text-xs uppercase font-bold text-slate-400">Accreditation Cycle</div>
+          <p class="text-[11px] text-slate-400 mt-1">Automating reviews, replacing Word documents and manual emails.</p>
         </div>
 
-        <!-- KPI 4 -->
-        <div class="bg-slate-800/90 border border-slate-700/60 rounded-xl p-6 shadow-xl relative overflow-hidden group hover:border-amber-500/50 transition-all">
-          <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
-          <div class="text-3xl mb-2">🎓</div>
-          <div class="text-3xl font-black text-white tracking-tight mb-1">
-            100% <span class="text-amber-400 text-sm font-medium">Digital Sync</span>
-          </div>
-          <div class="text-xs uppercase font-bold text-slate-400 tracking-wider">Credential Automation</div>
-          <p class="text-xs text-slate-400 mt-2">Eliminates Canva PDF drafting with automated Parchment digital badging.</p>
+        <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-5 shadow-lg">
+          <div class="text-2xl mb-1">📅</div>
+          <div class="text-2xl font-black text-amber-400 mb-1">March 2027 <span class="text-xs font-normal text-slate-300">Target</span></div>
+          <div class="text-xs uppercase font-bold text-slate-400">Migration Deadline</div>
+          <p class="text-[11px] text-slate-400 mt-1">Completing transition 1 month ahead of Cadmium Elevate's April renewal.</p>
         </div>
+
       </div>
+
     </div>
   </section>
 
-  <!-- Deep-Dive Diagnostic Section -->
-  <section id="diagnostic" class="py-16 bg-slate-800/40 border-t border-slate-800">
+  <section id="lms" class="py-14 bg-slate-900 border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Header -->
-      <div class="mb-10">
+      <div class="mb-10 max-w-3xl">
+        <span class="text-sky-400 font-bold text-xs uppercase tracking-wider block mb-1">Priority 1</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
-          1. Operational Diagnostic: Identifying Current Bottlenecks
+          1. LMS Modernization & Platform Functionality
         </h2>
-        <p class="text-slate-300 max-w-4xl text-sm md:text-base leading-relaxed">
-          As an ANSI-approved standards body managing Standard 01023 (Training Providers) and Standard 01024 (Instructors), IREC currently suffers from extreme process fragmentation. Staff spend hundreds of hours manually shuttling data between Asana, Salesforce, Google Drive, Excel JTA crosswalks, and an outdated IREC Direct portal.
+        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+          IREC’s workforce team connects career seekers, training providers, and municipal building officials through Green Workforce Connect. Modernizing the LMS provides API Single Sign-On (SSO) integration while aligning platform functionality with workforce vs traditional academic goals.
         </p>
       </div>
 
-      <!-- Grid Layout: Chart + Bottlenecks Breakdown -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
-        
-        <!-- Chart Column -->
-        <div class="lg:col-span-6 bg-slate-800 border border-slate-700/80 rounded-xl p-6 shadow-xl">
-          <div class="mb-4">
-            <h3 class="text-lg font-bold text-white flex items-center space-x-2">
-              <span>📊</span>
-              <span>Accreditation Cycle Time Breakdown (Days)</span>
-            </h3>
-            <p class="text-xs text-slate-400 mt-1">
-              Comparing process durations in legacy manual architecture versus the proposed automated Canvas ecosystem.
-            </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-5">
+          <div class="flex items-center space-x-3 mb-2">
+            <span class="text-2xl">☀️</span>
+            <div>
+              <h3 class="text-base font-bold text-white">Exploring Solar Careers</h3>
+              <p class="text-xs text-sky-400">Introductory Career Pathway</p>
+            </div>
           </div>
-          <div class="chart-container">
-            <canvas id="cycleTimeChart"></canvas>
-          </div>
-          <div class="mt-4 p-3 bg-slate-900/60 rounded-lg border border-slate-700/50 text-xs text-slate-300">
-            <strong class="text-sky-400">Key Takeaway:</strong> Eliminating manual document reviews and missing notification loops compresses a 216-day cycle into under 24 days.
-          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            7-8 concise learning modules providing broad exposure to solar industry roles. Being revitalized with an incoming federal grant to expand reach across municipal and utility stakeholders.
+          </p>
         </div>
 
-        <!-- Bottleneck Cards Column -->
-        <div class="lg:col-span-6 space-y-4">
-          
-          <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-5 shadow-md hover:border-slate-600 transition-all">
-            <div class="flex items-start space-x-3">
-              <span class="text-xl bg-rose-500/10 text-rose-400 p-2 rounded-lg font-bold">01</span>
-              <div>
-                <h4 class="font-bold text-white text-sm">Inquiry & Eligibility Blindspot</h4>
-                <p class="text-xs text-slate-300 mt-1">
-                  Candidates express interest via untracked emails logged into Asana. Fillable Word documents open in Google Drive frequently break formatting, corrupting data and forcing weeks of back-and-forth emails.
-                </p>
-              </div>
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-5">
+          <div class="flex items-center space-x-3 mb-2">
+            <span class="text-2xl">🛠️</span>
+            <div>
+              <h3 class="text-base font-bold text-white">Clean Energy Apprenticeships</h3>
+              <p class="text-xs text-emerald-400">4 Modules / 17 Lessons</p>
             </div>
           </div>
-
-          <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-5 shadow-md hover:border-slate-600 transition-all">
-            <div class="flex items-start space-x-3">
-              <span class="text-xl bg-amber-500/10 text-amber-400 p-2 rounded-lg font-bold">02</span>
-              <div>
-                <h4 class="font-bold text-white text-sm">Application & Financial Fragment</h4>
-                <p class="text-xs text-slate-300 mt-1">
-                  100+ documents are uploaded into IREC Direct in an unorganized list. Disconnected PayPal payments and 90% DOE Weatherization subsidies require manual Salesforce overrides and Google Sheet trackers.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-5 shadow-md hover:border-slate-600 transition-all">
-            <div class="flex items-start space-x-3">
-              <span class="text-xl bg-sky-500/10 text-sky-400 p-2 rounded-lg font-bold">03</span>
-              <div>
-                <h4 class="font-bold text-white text-sm">Desk Assessment Communication Silence</h4>
-                <p class="text-xs text-slate-300 mt-1">
-                  Assessors and candidates communicate in a shared Word document without automated email notifications. Both parties must manually check the portal continuously, risking candidacy expiration.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-5 shadow-md hover:border-slate-600 transition-all">
-            <div class="flex items-start space-x-3">
-              <span class="text-xl bg-indigo-500/10 text-indigo-400 p-2 rounded-lg font-bold">04</span>
-              <div>
-                <h4 class="font-bold text-white text-sm">Post-Award Disconnect</h4>
-                <p class="text-xs text-slate-300 mt-1">
-                  Staff manually design PDF certificates in Canva. Lack of API sync requires re-typing public listings from Asana forms into Green Workforce Connect website registries and Google Sheets.
-                </p>
-              </div>
-            </div>
-          </div>
-
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Launched with over 200 enrollees registered in the first week. Designed to hit grant targets of 100+ course completers with automated certificate delivery.
+          </p>
         </div>
       </div>
 
-      <!-- Process Flow Transformation Diagram (Structured HTML/CSS) -->
+      <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-6 shadow-xl mb-10">
+        <div class="mb-4">
+          <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+            <span>⚖️</span>
+            <span>Functional Matrix: Canvas Career vs. Canvas Academic</span>
+          </h3>
+          <p class="text-xs text-slate-400">Differentiating workforce-centric skill modules from traditional higher education administration tooling.</p>
+        </div>
+        <div class="chart-container">
+          <canvas id="functionalityChart"></canvas>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 text-xs">
+          <div class="bg-slate-900/60 p-3 rounded-lg border border-sky-500/30">
+            <span class="font-bold text-sky-400 block mb-1">Canvas Career Key Capabilities:</span>
+            <ul class="space-y-1 text-slate-300">
+              <li>• <strong>Skills Framework:</strong> Badging and industry competency tracking.</li>
+              <li>• <strong>Catalog E-Commerce:</strong> Automated public registration & payment processing.</li>
+              <li>• <strong>Canvas Studio:</strong> Interactive video assessments and learner engagement.</li>
+              <li>• <strong>Ignite AI:</strong> Adaptive career pathing and automated skill recommendations.</li>
+            </ul>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded-lg border border-indigo-500/30">
+            <span class="font-bold text-indigo-400 block mb-1">Canvas Academic Key Capabilities:</span>
+            <ul class="space-y-1 text-slate-300">
+              <li>• <strong>Discussion Boards:</strong> Cohort message threads and peer forums.</li>
+              <li>• <strong>Course Calendar:</strong> Term-based assignment schedules and due dates.</li>
+              <li>• <strong>Grading Rubrics:</strong> Standardized assignment evaluation sheets.</li>
+              <li>• <strong>Robust Grading:</strong> SpeedGrader gradebook for formal academic transcripts.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        
+        <div class="bg-slate-800 border-2 border-sky-500 rounded-xl p-6 shadow-xl relative">
+          <span class="absolute -top-3 right-4 bg-sky-500 text-slate-950 font-bold text-[10px] uppercase px-3 py-0.5 rounded-full">
+            Recommended Model
+          </span>
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="text-2xl">⚡</span>
+            <div>
+              <h3 class="text-lg font-bold text-white">Canvas Career (MAU Bundle)</h3>
+              <p class="text-xs text-sky-400">Monthly Active User Model</p>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 mb-4 bg-slate-900/60 p-3 rounded-lg border border-slate-700/50">
+            <strong>Analogy: Flexible Gym Pass.</strong> Pay only for learners actively logging in during a given month. Aligns perfectly with fluctuating grant-funded enrollment cycles.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-300 mb-4">
+            <li class="flex items-center space-x-2">
+              <span class="text-emerald-400">✔</span>
+              <span><strong>Bundled Suite:</strong> Includes Canvas LMS, Catalog E-Commerce, Studio, and Ignite AI</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-emerald-400">✔</span>
+              <span><strong>High Session Capacity:</strong> 1,000 MAUs supports up to 12,000 active sessions per year</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-emerald-400">✔</span>
+              <span><strong>Grant Volatility Shield:</strong> Eliminates long-term seat license liabilities</span>
+            </li>
+          </ul>
+          <div class="border-t border-slate-700 pt-3 flex justify-between items-center text-xs">
+            <span class="text-slate-400">1,000 MAU Base Tier:</span>
+            <span class="text-lg font-bold text-white">$47,950 / yr</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-md">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="text-2xl">🏢</span>
+            <div>
+              <h3 class="text-lg font-bold text-white">Canvas Academic (Enrollment)</h3>
+              <p class="text-xs text-indigo-400">Provisioned Seat Model</p>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 mb-4 bg-slate-900/60 p-3 rounded-lg border border-slate-700/50">
+            <strong>Analogy: Annual Apartment Lease.</strong> Pay a fixed annual fee per provisioned seat, regardless of whether the user completes the course in 2 weeks or 12 months.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-300 mb-4">
+            <li class="flex items-center space-x-2">
+              <span class="text-rose-400">✖</span>
+              <span><strong>Unbundled Add-ons:</strong> Catalog e-commerce, Studio, and Ignite AI require separate add-on licenses</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-rose-400">✖</span>
+              <span><strong>Strict Enrollment Cap:</strong> 1,000 seats strictly caps annual enrollees to 1,000 total</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-rose-400">✖</span>
+              <span><strong>Rigid Terms:</strong> Designed for semester schedules rather than on-demand workforce modules</span>
+            </li>
+          </ul>
+          <div class="border-t border-slate-700 pt-3 flex justify-between items-center text-xs">
+            <span class="text-slate-400">1,000 Seat Base Tier:</span>
+            <span class="text-lg font-bold text-slate-300">$14,000 / yr</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="simulator" class="bg-slate-800 border border-slate-700/80 rounded-xl p-6 shadow-xl mb-10">
+        <div class="mb-6">
+          <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+            <span>🧮</span>
+            <span>Interactive LMS Financial & Capacity Simulator</span>
+          </h3>
+          <p class="text-xs text-slate-400">Adjust active user volumes to calculate cost differences, session capacities, and annual enrollment thresholds.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <label for="mauSlider" class="text-xs font-bold text-white">Monthly Active Users (MAUs)</label>
+              <span id="mauValue" class="text-xs font-bold text-sky-400 bg-sky-500/10 px-2.5 py-0.5 rounded border border-sky-500/20">750 MAUs</span>
+            </div>
+            <input type="range" id="mauSlider" min="200" max="2000" step="50" value="750" class="w-full h-2 bg-slate-700 rounded appearance-none cursor-pointer accent-sky-400">
+            <p class="text-[11px] text-slate-400 mt-1">Active monthly learners taking courses across workforce programs.</p>
+          </div>
+
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <label for="shortCourseSlider" class="text-xs font-bold text-white">Annual Short-Course Enrollees</label>
+              <span id="shortCourseValue" class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-0.5 rounded border border-indigo-500/20">1,500 Enrollees</span>
+            </div>
+            <input type="range" id="shortCourseSlider" min="200" max="4000" step="100" value="1500" class="w-full h-2 bg-slate-700 rounded appearance-none cursor-pointer accent-indigo-400">
+            <p class="text-[11px] text-slate-400 mt-1">Total unique participants enrolling in short workforce modules per year.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-900/80 p-4 rounded-lg border border-slate-700/60">
+          <div>
+            <div class="text-[11px] uppercase font-bold text-sky-400">Canvas Career (MAU Model)</div>
+            <div id="mauCostDisplay" class="text-2xl font-black text-white">$35,963 <span class="text-xs font-normal text-slate-400">/ yr</span></div>
+            <div class="text-xs text-slate-300 mt-1">
+              Annual Session Capacity: <strong id="mauCapacityDisplay" class="text-emerald-400">9,000 sessions</strong><br>
+              Add-ons Included: <strong class="text-emerald-400">Catalog + Studio + Ignite AI</strong>
+            </div>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase font-bold text-indigo-400">Canvas Academic (Enrollment Model)</div>
+            <div id="enrollmentCostDisplay" class="text-2xl font-black text-white">$21,000 <span class="text-xs font-normal text-slate-400">/ yr</span></div>
+            <div class="text-xs text-slate-300 mt-1">
+              Annual Session Capacity: <strong id="enrollmentCapacityDisplay" class="text-amber-400">1,500 seats</strong><br>
+              Add-ons Included: <strong class="text-rose-400">None (Standalone LMS Only)</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-6 shadow-xl">
+        <div class="mb-4">
+          <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+            <span>📊</span>
+            <span>Capacity & Investment Metrics (1,000 Tier Baseline)</span>
+          </h3>
+          <p class="text-xs text-slate-400">Evaluating annual session capacity, year 1 investment total, and included add-on feature value.</p>
+        </div>
+        <div class="chart-container">
+          <canvas id="capacityChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="accreditation" class="py-14 bg-slate-800/40 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-10 max-w-3xl">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider block mb-1">Priority 2</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+          2. Credentialing & Accreditation Automation
+        </h2>
+        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+          As an ANSI-approved standards development organization, IREC accredits Training Providers (Standard 01023) and Instructors (Standard 01024). Replacing fragmented Salesforce workflows, flat IREC Direct upload lists, and manual badging processes with Canvas Credentials (Parchment).
+        </p>
+      </div>
+
+      <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-6 shadow-xl mb-10">
+        <div class="mb-4">
+          <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+            <span>⏱️</span>
+            <span>Accreditation Phase Duration Comparison (Days)</span>
+          </h3>
+          <p class="text-xs text-slate-400">Current manual Salesforce/Asana pipeline vs proposed Canvas Credentials workflow.</p>
+        </div>
+        <div class="chart-container">
+          <canvas id="cycleTimeChart"></canvas>
+        </div>
+        <p class="text-xs text-slate-300 mt-4 bg-slate-900/60 p-3 rounded-lg border border-slate-700/50">
+          <strong class="text-sky-400">Key Takeaway:</strong> Eliminating fillable Word documents and manual PayPal checks compresses total review time from 210 days down to under 24 days.
+        </p>
+      </div>
+
       <div class="bg-slate-800 border border-slate-700/80 rounded-xl p-6 shadow-xl">
         <h3 class="text-lg font-bold text-white mb-2 flex items-center space-x-2">
           <span>🔄</span>
-          <span>Target Architecture: Automated Credentialing & Registry Flow</span>
+          <span>End-to-End Automated Credentialing Pipeline</span>
         </h3>
-        <p class="text-xs text-slate-400 mb-6">
-          How Canvas Credentials (Parchment) and REST APIs unify the pipeline from candidate inquiry to verifiable badge.
-        </p>
+        <p class="text-xs text-slate-400 mb-6">Automated workflow from candidate inquiry to public registry display on Green Workforce Connect.</p>
 
-        <!-- Process Cards Flow -->
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
           
-          <!-- Step 1 -->
-          <div class="bg-slate-900/90 border border-sky-500/30 rounded-lg p-4 relative group hover:border-sky-400 transition-all">
-            <div class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1">Step 1: Intake</div>
-            <div class="font-semibold text-white text-sm mb-1">Single Sign-On</div>
-            <p class="text-[11px] text-slate-400">Direct portal API sync passes candidate directly into Canvas LMS.</p>
+          <div class="bg-slate-900/90 border border-sky-500/30 rounded-lg p-3">
+            <div class="text-[10px] font-bold text-sky-400 uppercase">1. Portal SSO Intake</div>
+            <div class="font-semibold text-white text-xs mt-1">Green Workforce Sync</div>
+            <p class="text-[11px] text-slate-400 mt-1">Candidates sign in via Green Workforce Connect API, replacing manual Asana entries.</p>
           </div>
 
-          <!-- Arrow Divider for MD screens -->
-          <div class="hidden md:flex items-center justify-center text-slate-500 font-bold text-xl">➔</div>
+          <div class="hidden md:flex items-center justify-center text-slate-500 font-bold">➔</div>
 
-          <!-- Step 2 -->
-          <div class="bg-slate-900/90 border border-sky-500/30 rounded-lg p-4 relative group hover:border-sky-400 transition-all">
-            <div class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1">Step 2: Submit</div>
-            <div class="font-semibold text-white text-sm mb-1">Cloud Dashboard</div>
-            <p class="text-[11px] text-slate-400">Evidence mapped cleanly to the 10 clauses of Standards 01023/01024.</p>
+          <div class="bg-slate-900/90 border border-sky-500/30 rounded-lg p-3">
+            <div class="text-[10px] font-bold text-sky-400 uppercase">2. Cloud Evidence Upload</div>
+            <div class="font-semibold text-white text-xs mt-1">Structured Submissions</div>
+            <p class="text-[11px] text-slate-400 mt-1">10 standard sections organized neatly, replacing flat file dumps and Word forms.</p>
           </div>
 
-          <!-- Arrow Divider for MD screens -->
-          <div class="hidden md:flex items-center justify-center text-slate-500 font-bold text-xl">➔</div>
+          <div class="hidden md:flex items-center justify-center text-slate-500 font-bold">➔</div>
 
-          <!-- Step 3 -->
-          <div class="bg-slate-900/90 border border-sky-500/30 rounded-lg p-4 relative group hover:border-sky-400 transition-all">
-            <div class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1">Step 3: Review</div>
-            <div class="font-semibold text-white text-sm mb-1">Inline Assessment</div>
-            <p class="text-[11px] text-slate-400">Assessors leave inline feedback; auto-triggers notify candidates instantly.</p>
+          <div class="bg-slate-900/90 border border-sky-500/30 rounded-lg p-3">
+            <div class="text-[10px] font-bold text-sky-400 uppercase">3. Assessor Review</div>
+            <div class="font-semibold text-white text-xs mt-1">Automated Triggers</div>
+            <p class="text-[11px] text-slate-400 mt-1">Inline comments trigger instant candidate notifications, removing email lag.</p>
           </div>
 
-          <!-- Arrow Divider for MD screens -->
-          <div class="hidden md:flex items-center justify-center text-slate-500 font-bold text-xl">➔</div>
+          <div class="hidden md:flex items-center justify-center text-slate-500 font-bold">➔</div>
 
-          <!-- Step 4 -->
-          <div class="bg-slate-900/90 border border-sky-500/30 rounded-lg p-4 relative group hover:border-sky-400 transition-all">
-            <div class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1">Step 4: Award</div>
-            <div class="font-semibold text-white text-sm mb-1">Parchment Badging</div>
-            <p class="text-[11px] text-slate-400">Cryptographically secure badge auto-generated upon committee approval.</p>
+          <div class="bg-slate-900/90 border border-sky-500/30 rounded-lg p-3">
+            <div class="text-[10px] font-bold text-sky-400 uppercase">4. Award & Badging</div>
+            <div class="font-semibold text-white text-xs mt-1">Parchment Issuance</div>
+            <p class="text-[11px] text-slate-400 mt-1">Verifiable digital badge issued automatically upon committee approval.</p>
           </div>
 
-          <!-- Arrow Divider for MD screens -->
-          <div class="hidden md:flex items-center justify-center text-slate-500 font-bold text-xl">➔</div>
+          <div class="hidden md:flex items-center justify-center text-slate-500 font-bold">➔</div>
 
-          <!-- Step 5 -->
-          <div class="bg-slate-900/90 border border-emerald-500/40 rounded-lg p-4 relative group hover:border-emerald-400 transition-all">
-            <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">Step 5: Public</div>
-            <div class="font-semibold text-white text-sm mb-1">Registry Auto-Sync</div>
-            <p class="text-[11px] text-slate-400">Open API syncs awarded badge directly to Green Workforce Connect.</p>
+          <div class="bg-slate-900/90 border border-emerald-500/40 rounded-lg p-3">
+            <div class="text-[10px] font-bold text-emerald-400 uppercase">5. Registry Sync</div>
+            <div class="font-semibold text-white text-xs mt-1">Public Display</div>
+            <p class="text-[11px] text-slate-400 mt-1">Open API auto-updates public credential holder registry and ActiveCampaign CRM.</p>
           </div>
 
         </div>
@@ -314,322 +408,90 @@
     </div>
   </section>
 
-  <!-- LMS Architecture & Financial Comparison Section -->
-  <section id="models" class="py-16 bg-slate-900 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="mb-12 text-center max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">
-          2. Licensing Models: MAU Bundle vs. Academic Enrollment
-        </h2>
-        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-          Because IREC's training volume is heavily dependent on cyclical grant funding and public subsidies, selecting the correct software licensing model is critical for long-term fiscal health.
-        </p>
-      </div>
-
-      <!-- Analogy Comparison Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        
-        <!-- MAU Card -->
-        <div class="bg-slate-800/90 border-2 border-sky-500/80 rounded-2xl p-6 shadow-2xl relative">
-          <span class="absolute -top-3 right-6 bg-sky-500 text-slate-950 font-bold text-xs uppercase px-3 py-1 rounded-full">
-            RECOMMENDED FOR IREC
-          </span>
-          <div class="flex items-center space-x-3 mb-4">
-            <span class="text-3xl">🏋️‍♂️</span>
-            <div>
-              <h3 class="text-xl font-bold text-white">Canvas Career Bundle</h3>
-              <p class="text-xs text-sky-400 font-semibold">Monthly Active User (MAU) Model</p>
-            </div>
-          </div>
-          
-          <div class="p-4 bg-slate-900/80 rounded-xl mb-4 border border-slate-700/60">
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-wide block mb-1">The Analogy: Flexible Gym Membership</span>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              You do not pay for every person who ever registered at the front desk over the past decade. You only pay for individuals who scan their badge and "work out" in any given month.
-            </p>
-          </div>
-
-          <ul class="space-y-2 text-xs text-slate-300 mb-6">
-            <li class="flex items-center space-x-2">
-              <span class="text-emerald-400">✔</span>
-              <span><strong>Bundles Full Suite:</strong> Includes Canvas LMS, Ignite AI, Studio, & Catalog</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="text-emerald-400">✔</span>
-              <span><strong>10,000 Historical Records:</strong> Stored at zero licensing cost when inactive</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="text-emerald-400">✔</span>
-              <span><strong>1,000 MAU Capacity:</strong> Yields up to 12,000 active sessions per year</span>
-            </li>
-          </ul>
-
-          <div class="border-t border-slate-700/80 pt-4 flex justify-between items-center text-xs">
-            <span class="text-slate-400">Year 1 Total Investment:</span>
-            <span class="text-xl font-black text-white">$61,790 <span class="text-xs font-normal text-slate-400">($47.95/MAU)</span></span>
-          </div>
-        </div>
-
-        <!-- Academic Enrollment Card -->
-        <div class="bg-slate-800/60 border border-slate-700/80 rounded-2xl p-6 shadow-xl relative">
-          <div class="flex items-center space-x-3 mb-4">
-            <span class="text-3xl">🏢</span>
-            <div>
-              <h3 class="text-xl font-bold text-white">Canvas Academic</h3>
-              <p class="text-xs text-indigo-400 font-semibold">Provisioned Enrollment Model</p>
-            </div>
-          </div>
-
-          <div class="p-4 bg-slate-900/80 rounded-xl mb-4 border border-slate-700/60">
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-wide block mb-1">The Analogy: Annual Apartment Lease</span>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              You pay a fixed, flat rate for a specific physical seat for the entire year, regardless of how often the student is actually in the room or taking courses.
-            </p>
-          </div>
-
-          <ul class="space-y-2 text-xs text-slate-300 mb-6">
-            <li class="flex items-center space-x-2">
-              <span class="text-rose-400">✖</span>
-              <span><strong>Core LMS Only:</strong> Catalog & Studio require separate paid extensions</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="text-rose-400">✖</span>
-              <span><strong>Reactivation Penalty:</strong> Activating historical users consumes annual seats</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="text-rose-400">✖</span>
-              <span><strong>1,000 Enrollment Tier:</strong> Strictly capped at 1,000 total enrollments/yr</span>
-            </li>
-          </ul>
-
-          <div class="border-t border-slate-700/80 pt-4 flex justify-between items-center text-xs">
-            <span class="text-slate-400">Year 1 Total Investment:</span>
-            <span class="text-xl font-black text-slate-300">$37,340 <span class="text-xs font-normal text-slate-400">($14.00/Seat)</span></span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Charts Grid: Capacity Comparison & Feature Radar -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        
-        <!-- Capacity & Cost Grouped Bar Chart -->
-        <div class="lg:col-span-6 bg-slate-800 border border-slate-700/80 rounded-xl p-6 shadow-xl">
-          <div class="mb-4">
-            <h3 class="text-lg font-bold text-white flex items-center space-x-2">
-              <span>📈</span>
-              <span>Annual Capacity & Financial Metrics</span>
-            </h3>
-            <p class="text-xs text-slate-400 mt-1">
-              Comparing session capacity, year 1 cost, and feature bundle value for a 1,000 user baseline.
-            </p>
-          </div>
-          <div class="chart-container">
-            <canvas id="capacityChart"></canvas>
-          </div>
-          <div class="mt-4 p-3 bg-slate-900/60 rounded-lg border border-slate-700/50 text-xs text-slate-300">
-            <strong class="text-sky-400">Capacity Advantage:</strong> The 1,000 MAU tier provides 12x the potential course access volume compared to a strict 1,000 Enrollment cap.
-          </div>
-        </div>
-
-        <!-- Capability Alignment Radar Chart -->
-        <div class="lg:col-span-6 bg-slate-800 border border-slate-700/80 rounded-xl p-6 shadow-xl">
-          <div class="mb-4">
-            <h3 class="text-lg font-bold text-white flex items-center space-x-2">
-              <span>🎯</span>
-              <span>Strategic Capability Alignment</span>
-            </h3>
-            <p class="text-xs text-slate-400 mt-1">
-              Evaluating platform fit across IREC's operational requirements (Scale: 1 - 10).
-            </p>
-          </div>
-          <div class="chart-container">
-            <canvas id="radarChart"></canvas>
-          </div>
-          <div class="mt-4 p-3 bg-slate-900/60 rounded-lg border border-slate-700/50 text-xs text-slate-300">
-            <strong class="text-indigo-400">Strategic Fit:</strong> The Career MAU Bundle aligns perfectly with workforce training, e-commerce storefronts, and grant fluctuations.
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Interactive Cost & Capacity Simulator -->
-  <section id="calculator" class="py-16 bg-slate-800/60 border-t border-slate-800">
+  <section id="roadmap" class="py-14 bg-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="mb-10 text-center max-w-3xl mx-auto">
-        <span class="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-semibold tracking-wider uppercase mb-3 border border-emerald-500/20">
-          Interactive Financial Tool
-        </span>
+        <span class="text-sky-400 font-bold text-xs uppercase tracking-wider block mb-1">Priority 3</span>
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
-          3. Dynamic Cost & Capacity Simulator
+          3. Phased Implementation Timeline
         </h2>
         <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-          Adjust the sliders below to simulate IREC's expected learner traffic and see how the Career MAU model compares against the Academic Enrollment model in annual cost and volume capacity.
+          Structured deployment targeting full go-live by March 2027 to ensure a 1-month buffer before Cadmium Elevate renewal.
         </p>
       </div>
 
-      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 md:p-8 shadow-2xl max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-10">
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          
-          <!-- Slider 1: Active Monthly Users -->
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <label for="mauSlider" class="text-sm font-bold text-white">Expected Monthly Active Users (MAUs)</label>
-              <span id="mauValue" class="text-sm font-extrabold text-sky-400 bg-sky-500/10 px-3 py-1 rounded-lg border border-sky-500/20">750 MAUs</span>
-            </div>
-            <input type="range" id="mauSlider" min="200" max="2500" step="50" value="750" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-sky-400">
-            <p class="text-[11px] text-slate-400 mt-2">Active unique learners logging in during a typical month across all grant programs.</p>
-          </div>
-
-          <!-- Slider 2: Reactivated Historical Contacts -->
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <label for="legacySlider" class="text-sm font-bold text-white">Historical Contacts Reactivating / Year</label>
-              <span id="legacyValue" class="text-sm font-extrabold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-lg border border-indigo-500/20">1,200 Contacts</span>
-            </div>
-            <input type="range" id="legacySlider" min="100" max="5000" step="100" value="1200" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-indigo-400">
-            <p class="text-[11px] text-slate-400 mt-2">Historical contacts taking a short refresher course or verifying a credential.</p>
-          </div>
-
-        </div>
-
-        <!-- Simulation Results Dashboard -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-slate-700/80">
-          
-          <!-- MAU Result Box -->
-          <div class="bg-slate-900/90 border border-sky-500/40 rounded-xl p-5 relative">
-            <div class="text-xs uppercase font-bold text-sky-400 tracking-wider mb-1">Canvas Career Bundle (MAU)</div>
-            <div id="mauCostDisplay" class="text-3xl font-black text-white mb-2">$47,950 <span class="text-xs font-normal text-slate-400">/ yr subscription</span></div>
-            <div class="space-y-1 text-xs text-slate-300">
-              <p>• <strong>Annual User Capacity:</strong> <span id="mauCapacityDisplay" class="text-emerald-400 font-bold">9,000 active sessions</span></p>
-              <p>• <strong>Historical Contact Storage:</strong> <span class="text-emerald-400 font-bold">100% Free ($0)</span></p>
-              <p>• <strong>Bundled Extension Value:</strong> <span class="text-emerald-400 font-bold">Catalog + Studio Included</span></p>
-            </div>
-          </div>
-
-          <!-- Academic Result Box -->
-          <div class="bg-slate-900/90 border border-slate-700 rounded-xl p-5 relative">
-            <div class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1">Canvas Academic (Enrollment)</div>
-            <div id="enrollmentCostDisplay" class="text-3xl font-black text-slate-200 mb-2">$29,400 <span class="text-xs font-normal text-slate-400">/ yr subscription</span></div>
-            <div class="space-y-1 text-xs text-slate-300">
-              <p>• <strong>Annual User Capacity:</strong> <span id="enrollmentCapacityDisplay" class="text-amber-400 font-bold">2,100 total seats</span></p>
-              <p>• <strong>Reactivation Risk:</strong> <span class="text-rose-400 font-bold">Consumes permanent seat licenses</span></p>
-              <p>• <strong>Bundled Extension Value:</strong> <span class="text-rose-400 font-bold">Catalog + Studio extra cost</span></p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Dynamic Strategic Recommendation Banner -->
-        <div id="simRecommendation" class="mt-6 p-4 rounded-xl bg-sky-500/10 border border-sky-500/30 text-xs text-sky-200 leading-relaxed">
-          <strong class="text-sky-400 font-bold">Strategic Insight:</strong> Under your selected parameters, the MAU model provides up to <strong>9,000 active learner sessions</strong> annually without risk of seat depletion when historical contacts activate for short certificates.
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Phased Implementation Roadmap Section -->
-  <section id="roadmap" class="py-16 bg-slate-900 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="mb-12 text-center max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-4xl font-bold text-white mb-3">
-          4. Phased Deployment & Partnership Roadmap
-        </h2>
-        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-          To ensure operational stability prior to the April 2027 Cadmium Elevate renewal deadline, we recommend a two-phase strategic rollout.
-        </p>
-      </div>
-
-      <!-- Timeline Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Phase 1 -->
-        <div class="bg-slate-800 border border-slate-700/80 rounded-2xl p-6 shadow-xl relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-sky-500 text-slate-950 font-bold text-xs uppercase px-4 py-1 rounded-bl-xl">
-            Priority 1
-          </div>
-          <div class="text-xs uppercase font-extrabold text-sky-400 tracking-wider mb-2">Phase 1 Execution</div>
-          <h3 class="text-xl font-bold text-white mb-3">Core LMS & Portal API Integration</h3>
-          
-          <ul class="space-y-3 text-xs text-slate-300 mb-6">
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
+          <div class="text-xs font-bold text-sky-400 uppercase mb-1">Phase 1: Q3 - Q4 2025</div>
+          <h3 class="text-base font-bold text-white mb-2">LMS & SSO Integration</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
             <li class="flex items-start space-x-2">
-              <span class="text-sky-400 mt-0.5">🚀</span>
-              <span><strong>REST API & SSO Integration:</strong> Connect Canvas LMS directly to Green Workforce Connect portal for seamless login.</span>
+              <span class="text-sky-400 mt-0.5">➔</span>
+              <span>Deploy Canvas LMS & configure Green Workforce Connect SSO API</span>
             </li>
             <li class="flex items-start space-x-2">
-              <span class="text-sky-400 mt-0.5">📚</span>
-              <span><strong>Flagship Delivery:</strong> Secure immediate delivery for <em>Exploring Solar Careers</em> and <em>Clean Energy Apprenticeships</em>.</span>
+              <span class="text-sky-400 mt-0.5">➔</span>
+              <span>Migrate flagship courses (Exploring Solar & Apprenticeships)</span>
             </li>
             <li class="flex items-start space-x-2">
-              <span class="text-sky-400 mt-0.5">💳</span>
-              <span><strong>E-Commerce Automation:</strong> Replace disconnected PayPal workflows with integrated Canvas Catalog payment gateways.</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-sky-400 mt-0.5">📦</span>
-              <span><strong>Data Migration:</strong> Evaluate SCORM packages and register 10,000 historical contacts into the dormant archive.</span>
+              <span class="text-sky-400 mt-0.5">➔</span>
+              <span>Configure Canvas Catalog payment gateway to automate enrollment</span>
             </li>
           </ul>
-
-          <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700/50 text-xs text-slate-400">
-            <strong>Target Completion:</strong> Q3 2025 (Ensures full transition well ahead of April 2027 renewal).
-          </div>
         </div>
 
-        <!-- Phase 2 -->
-        <div class="bg-slate-800 border border-slate-700/80 rounded-2xl p-6 shadow-xl relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-indigo-500 text-white font-bold text-xs uppercase px-4 py-1 rounded-bl-xl">
-            Priority 2
-          </div>
-          <div class="text-xs uppercase font-extrabold text-indigo-400 tracking-wider mb-2">Phase 2 Execution</div>
-          <h3 class="text-xl font-bold text-white mb-3">Credentialing Automation via Parchment</h3>
-          
-          <ul class="space-y-3 text-xs text-slate-300 mb-6">
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
+          <div class="text-xs font-bold text-indigo-400 uppercase mb-1">Phase 2: Q1 - Q3 2026</div>
+          <h3 class="text-base font-bold text-white mb-2">Accreditation Automation</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
             <li class="flex items-start space-x-2">
-              <span class="text-indigo-400 mt-0.5">🛡️</span>
-              <span><strong>ANSI Standard Compliance:</strong> Deploy cloud dashboards for Standards 01023 and 01024, replacing fillable Word forms.</span>
+              <span class="text-indigo-400 mt-0.5">➔</span>
+              <span>Configure cloud submission dashboards for Standards 01023/01024</span>
             </li>
             <li class="flex items-start space-x-2">
-              <span class="text-indigo-400 mt-0.5">💬</span>
-              <span><strong>Real-time Assessor Feedback:</strong> Enable inline review tools with automated email notifications to eliminate delays.</span>
+              <span class="text-indigo-400 mt-0.5">➔</span>
+              <span>Integrate Parchment Credentials to automate badging & certificates</span>
             </li>
             <li class="flex items-start space-x-2">
-              <span class="text-indigo-400 mt-0.5">🎓</span>
-              <span><strong>Parchment Digital Badges:</strong> Eliminate manual Canva PDFs with cryptographically secure, metadata-rich digital badges.</span>
-            </li>
-            <li class="flex items-start space-x-2">
-              <span class="text-indigo-400 mt-0.5">🔄</span>
-              <span><strong>Registry Synchronization:</strong> Synchronize awarded credentials automatically with public website registries.</span>
+              <span class="text-indigo-400 mt-0.5">➔</span>
+              <span>Establish cloud upload structure for active credential holders</span>
             </li>
           </ul>
+        </div>
 
-          <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700/50 text-xs text-slate-400">
-            <strong>Target Completion:</strong> Q1 2026 (Fully modernizes accreditation engine).
-          </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 shadow-lg">
+          <div class="text-xs font-bold text-emerald-400 uppercase mb-1">Phase 3: Q4 2026 - March 2027</div>
+          <h3 class="text-base font-bold text-white mb-2">Cutover & Renewal Buffer</h3>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400 mt-0.5">➔</span>
+              <span>Sunset Salesforce credentialing modules & IREC Direct portal</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400 mt-0.5">➔</span>
+              <span>Complete March 2027 cutover (30-day buffer before April renewal)</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400 mt-0.5">➔</span>
+              <span>Launch public registry auto-sync with ActiveCampaign CRM</span>
+            </li>
+          </ul>
         </div>
 
       </div>
 
-      <!-- Final Call to Action Footer -->
-      <div class="mt-12 bg-gradient-to-r from-sky-500/20 via-slate-800 to-indigo-500/20 border border-sky-500/30 rounded-2xl p-8 text-center max-w-4xl mx-auto shadow-2xl">
-        <h3 class="text-2xl font-bold text-white mb-3">Initiating the Validation Phase</h3>
-        <p class="text-slate-300 text-sm max-w-2xl mx-auto mb-6">
-          We are committed to partnering with IREC to eliminate administrative friction and maximize grant dollars. Which LMS pricing model would you like us to center our Phase 3 deep-dive demonstration around?
+      <div class="bg-slate-800/80 border border-sky-500/30 rounded-2xl p-6 text-center max-w-3xl mx-auto shadow-2xl">
+        <h3 class="text-xl font-bold text-white mb-2">Ready to Schedule the Deep-Dive Technical Demo?</h3>
+        <p class="text-slate-300 text-xs max-w-xl mx-auto mb-5">
+          Select your preferred LMS licensing configuration to structure the solution engineering demonstration.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="#calculator" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition-colors shadow-lg shadow-sky-500/25">
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a href="#simulator" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold px-5 py-2.5 rounded-lg text-xs transition-colors">
             Select Canvas Career (MAU) Demo
           </a>
-          <a href="#calculator" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold px-6 py-3 rounded-xl text-sm transition-colors">
+          <a href="#simulator" class="bg-slate-700 hover:bg-slate-600 text-slate-200 font-bold px-5 py-2.5 rounded-lg text-xs transition-colors">
             Select Academic Enrollment Demo
           </a>
         </div>
@@ -638,144 +500,56 @@
     </div>
   </section>
 
-  <!-- JavaScript Section for Chart.js & Interactive Simulator -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-      // --- CHART 1: Operational Cycle Time (Horizontal Bar Chart) ---
-      const cycleCtx = document.getElementById('cycleTimeChart').getContext('2d');
-      
-      // Label wrapping logic (>16 chars processed into array of lines)
-      const rawCycleLabels = [
-        "Inquiry & Intake Phase",
-        "Eligibility Crosswalk",
-        "Application & Payment Processing",
-        "Desk Assessment Phase",
-        "Post-Award Issuance & Public Sync"
-      ];
-
-      const processedCycleLabels = rawCycleLabels.map(label => {
-        if (label.length > 16) {
-          const words = label.split(' ');
-          let lines = [];
-          let currentLine = '';
-          words.forEach(word => {
-            if ((currentLine + word).length > 16) {
-              if (currentLine) lines.push(currentLine.trim());
-              currentLine = word + ' ';
-            } else {
-              currentLine += word + ' ';
-            }
-          });
-          if (currentLine) lines.push(currentLine.trim());
-          return lines;
-        } {
-          return label;
-        }
-      });
-
-      new Chart(cycleCtx, {
-        type: 'bar',
-        data: {
-          labels: processedCycleLabels,
-          datasets: [
-            {
-              label: 'Legacy Process (Days)',
-              data: [21, 60, 30, 90, 15],
-              backgroundColor: '#F43F5E',
-              borderRadius: 4
-            },
-            {
-              label: 'Canvas Automated (Days)',
-              data: [2, 7, 1, 14, 0.5],
-              backgroundColor: '#10B981',
-              borderRadius: 4
-            }
-          ]
-        },
-        options: {
-          indexAxis: 'y',
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              labels: { color: '#94A3B8', font: { size: 11 } }
-            },
-            tooltip: {
-              callbacks: {
-                title: function(tooltipItems) {
-                  const item = tooltipItems[0];
-                  let label = item.chart.data.labels[item.dataIndex];
-                  if (Array.isArray(label)) {
-                    return label.join(' ');
-                  } else {
-                    return label;
-                  }
-                }
-              }
-            }
-          },
-          scales: {
-            x: {
-              grid: { color: '#334155' },
-              ticks: { color: '#94A3B8' },
-              title: { display: true, text: 'Duration in Days', color: '#64748B' }
-            },
-            y: {
-              grid: { display: false },
-              ticks: { color: '#CBD5E1', font: { size: 11 } }
-            }
+      function wrapLabel(str) {
+        if (typeof str !== 'string') return str;
+        if (str.length <= 16) return str;
+        const words = str.split(' ');
+        const lines = [];
+        let currentLine = '';
+        words.forEach(word => {
+          if ((currentLine + word).length > 16) {
+            if (currentLine) lines.push(currentLine.trim());
+            currentLine = word + ' ';
+          } else {
+            currentLine += word + ' ';
           }
-        }
-      });
+        });
+        if (currentLine) lines.push(currentLine.trim());
+        return lines;
+      }
 
-
-      // --- CHART 2: Annual Capacity & Financial Comparison (Grouped Bar Chart) ---
-      const capacityCtx = document.getElementById('capacityChart').getContext('2d');
-
-      const rawCapLabels = [
-        "Annual Course Access Capacity",
-        "Year 1 Investment Total ($)",
-        "Dormant User Storage Cost ($)",
-        "Included Platform Extension Value"
+      const funcCtx = document.getElementById('functionalityChart').getContext('2d');
+      const rawFuncLabels = [
+        "Skills Framework",
+        "Catalog E-Commerce",
+        "Canvas Studio",
+        "Ignite AI Support",
+        "Discussion Boards",
+        "Course Calendar",
+        "Grading Rubrics",
+        "Robust Grading"
       ];
+      const processedFuncLabels = rawFuncLabels.map(wrapLabel);
 
-      const processedCapLabels = rawCapLabels.map(label => {
-        if (label.length > 16) {
-          const words = label.split(' ');
-          let lines = [];
-          let currentLine = '';
-          words.forEach(word => {
-            if ((currentLine + word).length > 16) {
-              if (currentLine) lines.push(currentLine.trim());
-              currentLine = word + ' ';
-            } else {
-              currentLine += word + ' ';
-            }
-          });
-          if (currentLine) lines.push(currentLine.trim());
-          return lines;
-        } {
-          return label;
-        }
-      });
-
-      new Chart(capacityCtx, {
+      new Chart(funcCtx, {
         type: 'bar',
         data: {
-          labels: processedCapLabels,
+          labels: processedFuncLabels,
           datasets: [
             {
-              label: '1,000 MAU Tier (Career)',
-              data: [12000, 61790, 0, 100],
+              label: 'Canvas Career Suite',
+              data: [10, 10, 10, 10, 4, 5, 5, 4],
               backgroundColor: '#0EA5E9',
-              borderRadius: 6
+              borderRadius: 4
             },
             {
-              label: '1,000 Enrollment Tier (Academic)',
-              data: [1000, 37340, 14000, 30],
+              label: 'Canvas Academic Platform',
+              data: [3, 2, 4, 2, 10, 10, 10, 10],
               backgroundColor: '#6366F1',
-              borderRadius: 6
+              borderRadius: 4
             }
           ]
         },
@@ -807,64 +581,38 @@
             },
             y: {
               grid: { color: '#334155' },
-              ticks: { color: '#94A3B8' }
+              ticks: { color: '#94A3B8' },
+              suggestedMin: 0,
+              suggestedMax: 10
             }
           }
         }
       });
 
-
-      // --- CHART 3: Strategic Capability Alignment (Radar Chart) ---
-      const radarCtx = document.getElementById('radarChart').getContext('2d');
-
-      const rawRadarLabels = [
-        "Grant Volatility Support",
-        "E-Commerce Storefront",
-        "Interactive Media Studio",
-        "Accreditation Automation",
-        "Historical Data Cost Risk"
+      const capacityCtx = document.getElementById('capacityChart').getContext('2d');
+      const rawCapLabels = [
+        "Annual Sessions",
+        "Year 1 Total ($)",
+        "Included Add-ons"
       ];
+      const processedCapLabels = rawCapLabels.map(wrapLabel);
 
-      const processedRadarLabels = rawRadarLabels.map(label => {
-        if (label.length > 16) {
-          const words = label.split(' ');
-          let lines = [];
-          let currentLine = '';
-          words.forEach(word => {
-            if ((currentLine + word).length > 16) {
-              if (currentLine) lines.push(currentLine.trim());
-              currentLine = word + ' ';
-            } else {
-              currentLine += word + ' ';
-            }
-          });
-          if (currentLine) lines.push(currentLine.trim());
-          return lines;
-        } {
-          return label;
-        }
-      });
-
-      new Chart(radarCtx, {
-        type: 'radar',
+      new Chart(capacityCtx, {
+        type: 'bar',
         data: {
-          labels: processedRadarLabels,
+          labels: processedCapLabels,
           datasets: [
             {
-              label: 'Career MAU Bundle',
-              data: [10, 10, 9, 10, 10],
-              borderColor: '#0EA5E9',
-              backgroundColor: 'rgba(14, 165, 233, 0.25)',
-              borderWidth: 2,
-              pointBackgroundColor: '#0EA5E9'
+              label: '1,000 MAU Tier (Career)',
+              data: [12000, 61790, 3],
+              backgroundColor: '#0EA5E9',
+              borderRadius: 4
             },
             {
-              label: 'Academic Enrollment',
-              data: [5, 3, 4, 7, 3],
-              borderColor: '#6366F1',
-              backgroundColor: 'rgba(99, 102, 241, 0.2)',
-              borderWidth: 2,
-              pointBackgroundColor: '#6366F1'
+              label: '1,000 Seat Tier (Academic)',
+              data: [1000, 37340, 0],
+              backgroundColor: '#6366F1',
+              borderRadius: 4
             }
           ]
         },
@@ -890,61 +638,112 @@
             }
           },
           scales: {
-            r: {
-              angleLines: { color: '#334155' },
+            x: {
+              grid: { display: false },
+              ticks: { color: '#CBD5E1', font: { size: 11 } }
+            },
+            y: {
               grid: { color: '#334155' },
-              pointLabels: { color: '#CBD5E1', font: { size: 10 } },
-              ticks: { display: false, backdropColor: 'transparent' },
-              suggestedMin: 0,
-              suggestedMax: 10
+              ticks: { color: '#94A3B8' }
             }
           }
         }
       });
 
+      const cycleCtx = document.getElementById('cycleTimeChart').getContext('2d');
+      const rawCycleLabels = [
+        "Inquiry & Eligibility",
+        "Application & Payment",
+        "Desk Assessment",
+        "Post-Award Badging"
+      ];
+      const processedCycleLabels = rawCycleLabels.map(wrapLabel);
 
-      // --- DYNAMIC INTERACTIVE CALCULATOR LOGIC ---
+      new Chart(cycleCtx, {
+        type: 'bar',
+        data: {
+          labels: processedCycleLabels,
+          datasets: [
+            {
+              label: 'Current Manual Workflow (Days)',
+              data: [75, 30, 90, 15],
+              backgroundColor: '#F43F5E',
+              borderRadius: 4
+            },
+            {
+              label: 'Canvas Credentials Automated (Days)',
+              data: [7, 1, 14, 1],
+              backgroundColor: '#10B981',
+              borderRadius: 4
+            }
+          ]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: { color: '#94A3B8', font: { size: 11 } }
+            },
+            tooltip: {
+              callbacks: {
+                title: function(tooltipItems) {
+                  const item = tooltipItems[0];
+                  let label = item.chart.data.labels[item.dataIndex];
+                  if (Array.isArray(label)) {
+                    return label.join(' ');
+                  } else {
+                    return label;
+                  }
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: '#334155' },
+              ticks: { color: '#94A3B8' }
+            },
+            y: {
+              grid: { display: false },
+              ticks: { color: '#CBD5E1', font: { size: 11 } }
+            }
+          }
+        }
+      });
+
       const mauSlider = document.getElementById('mauSlider');
-      const legacySlider = document.getElementById('legacySlider');
+      const shortCourseSlider = document.getElementById('shortCourseSlider');
       const mauValue = document.getElementById('mauValue');
-      const legacyValue = document.getElementById('legacyValue');
+      const shortCourseValue = document.getElementById('shortCourseValue');
 
       const mauCostDisplay = document.getElementById('mauCostDisplay');
       const mauCapacityDisplay = document.getElementById('mauCapacityDisplay');
       const enrollmentCostDisplay = document.getElementById('enrollmentCostDisplay');
       const enrollmentCapacityDisplay = document.getElementById('enrollmentCapacityDisplay');
-      const simRecommendation = document.getElementById('simRecommendation');
 
       function calculateSim() {
         const mauCount = parseInt(mauSlider.value, 10);
-        const legacyCount = parseInt(legacySlider.value, 10);
+        const shortCourseCount = parseInt(shortCourseSlider.value, 10);
 
         mauValue.textContent = `${mauCount.toLocaleString()} MAUs`;
-        legacyValue.textContent = `${legacyCount.toLocaleString()} Contacts`;
+        shortCourseValue.textContent = `${shortCourseCount.toLocaleString()} Enrollees`;
 
-        // Pricing logic: MAU base rate ~$47.95 / user / yr
         const mauCost = Math.round(mauCount * 47.95);
         const mauAnnualCapacity = mauCount * 12;
 
-        // Enrollment logic: Base ~$14.00 / user / yr, but legacy contacts activate 1-for-1 seats
-        const totalEnrollmentSeats = mauCount + legacyCount;
-        const enrollmentCost = Math.round(totalEnrollmentSeats * 14.00);
+        const enrollmentCost = Math.round(shortCourseCount * 14.00);
 
-        mauCostDisplay.innerHTML = `$${mauCost.toLocaleString()} <span class="text-xs font-normal text-slate-400">/ yr subscription</span>`;
-        mauCapacityDisplay.textContent = `${mauAnnualCapacity.toLocaleString()} active sessions`;
+        mauCostDisplay.innerHTML = `$${mauCost.toLocaleString()} <span class="text-xs font-normal text-slate-400">/ yr</span>`;
+        mauCapacityDisplay.textContent = `${mauAnnualCapacity.toLocaleString()} sessions`;
 
-        enrollmentCostDisplay.innerHTML = `$${enrollmentCost.toLocaleString()} <span class="text-xs font-normal text-slate-400">/ yr subscription</span>`;
-        enrollmentCapacityDisplay.textContent = `${totalEnrollmentSeats.toLocaleString()} total seats`;
-
-        if (mauAnnualCapacity >= totalEnrollmentSeats) {
-          simRecommendation.innerHTML = `<strong class="text-sky-400 font-bold">Strategic Insight:</strong> Under your selected parameters, the Career MAU model provides <strong>${mauAnnualCapacity.toLocaleString()} active learner sessions</strong> per year while protecting IREC from permanent seat charges when ${legacyCount.toLocaleString()} historical contacts reactivate.`;
-        } else {
-          simRecommendation.innerHTML = `<strong class="text-indigo-400 font-bold">Strategic Insight:</strong> Higher steady-state cohorts favor the enrollment model, but remember that the Career MAU bundle natively includes Canvas Catalog ($10k+ value) and Studio media interactive tools.`;
-        }
+        enrollmentCostDisplay.innerHTML = `$${enrollmentCost.toLocaleString()} <span class="text-xs font-normal text-slate-400">/ yr</span>`;
+        enrollmentCapacityDisplay.textContent = `${shortCourseCount.toLocaleString()} seats`;
       }
 
       mauSlider.addEventListener('input', calculateSim);
-      legacySlider.addEventListener('input', calculateSim);
+      shortCourseSlider.addEventListener('input', calculateSim);
       calculateSim();
 
     });
